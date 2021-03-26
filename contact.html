@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html   lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Observatoire astronomique de Rouen</title>
+    <link rel="icon" type="image/png" href="Logo.png" />
+    <link rel="stylesheet" href="contact.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+
+    <div class="smooth">
+      <div class="menu">
+        <div class="Logo"><img src="image/Logo.png" width="45" alt=""></div>  
+        <nav class="nav">
+            <a href="index.html#Accueil" class="nav-item  is-active" active-color=#134074>Accueil</a>
+            <a href="index.html#Article" class="nav-item" active-color=#134074 >Article</a>
+            <a href="index.html#Evenement" class="nav-item" active-color=#134074 >Evenement</a>
+            <a href="index.html#Galerie" class="nav-item" active-color=#134074>Galerie</a>
+            <a href="index.html#Contact" class="nav-item" active-color=#134074>Contact</a>
+          <span class="nav-indicator"></span>
+        </nav>
+      </div>
+      <header> 
+    </header>
+    </div>
+
+    <div class="presentation">
+        <div class="wrapper">
+            <div class="contact">
+                <div class="homme"></div>
+                <h1>Aymeric Berrenger</h1>
+                <a href="http://www.astrosurf.com/aberrenger">http://www.astrosurf.com/aberrenger</a>
+            </div>
+            <div class="contact">
+                <div class="homme"></div>
+                <h1>Christophe Béthune</h1>
+                <a href="http://www.astrosurf.com/astrodryat">http://www.astrosurf.com/astrodryat</a>
+            </div>
+            <div class="contact">
+                <div class="femme"></div>
+                <h1>Robin Chassagne</h1>
+                <a href="http://www.astrosurf.com/chassagne">http://www.astrosurf.com/chassagne</a>
+            </div>
+            <div class="contact">
+                <div class="homme"></div>
+                <h1>Jean-Christophe Dalouzy</h1>
+                <a href="http://www.astrosurf.com/jcdalouzy">http://www.astrosurf.com/jcdalouzy</a>
+            </div>
+            <div class="contact">
+                <div class="homme"></div>
+                <h1>Valère Leroy</h1>
+                <a href="http://www.astrosurf.com/astroanimations">http://www.astrosurf.com/astroanimations</a>
+            </div>
+            <div class="contact">
+                <div class="homme"></div>
+                <h1>Fabrice Morin</h1>
+                <a href="http://www.astrosurf.com/fmorin">http://www.astrosurf.com/fmorin</a>
+            </div>
+        </div>
+    </div>
+
+    
+
+<div class="contact-section">
+    <h4 class="sent-notification"></h4>
+    <h1>Nous contacter</h1>
+    <div class="border"></div>
+    <form id="myForm" class="contact-form">
+            <input type="text" class="contact-form-text" placeholder="Your name" id="name">
+            <input type="email" class="contact-form-text" placeholder="Your email" id="email">
+            <textarea class="contact-form-text" placeholder="Your message" id="body" rows="5"></textarea>
+            <button type="button" onclick="sendEmail()" class="contact-form-btn" value="Send an Email">Envoyer</button>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script type="text/javascript">
+    function sendEmail(){
+        var name = $("#name");
+        var email = $("#email");
+        var body = $("#body");
+
+        if(isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(body)){
+            $.ajax({
+                url: 'sendEmail.php',
+                method:'POST',
+                dataType: 'json',
+                data:{
+                    name: name.val(),
+                    email: email.val(),
+                    body: body.val()
+                }, success: function(response){
+                    $('#myForm')[0].reset();
+                    $('.sent-notification').text("Votre message a bien été envoyé.");
+                }
+            });
+
+        }
+    }
+    function isNotEmpty(caller){
+        if(caller.val()==""){
+            caller.css('border', '1px solid red');
+            return false;
+        }
+        else
+        {
+            caller.css('border', '');
+            return true;
+        }
+    }
+</script>
+
+<footer>
+    <div class="footer_nav">
+    <div class="footer1">
+        <p class="footer_title">Observatoire Astrologique de Rouen</p>
+        <div class="footer_menu">
+            <p><a href="index.html#Accueil">Acceuil</a></p>
+            <p><a href="index.html#Article">Article</a></p>
+            <p><a href="index.html#Evenement">Évènements</a></p>
+            <p><a href="index.html#Galerie">Galerie</a></p>
+            <p><a href="index.html#Contact">Contact</a></p>
+        </div>
+    </div>
+    <div class="footer2">
+        <p class="footer_title">Aide</p>
+        <div class="footer_menu">
+            <p>support@observatoire_de_rouen.fr</p>
+            <p>Mentions légales</p>
+        </div>
+    </div>
+    <div class="footer3">
+        <p class="footer_title">Plus</p>
+        <div class="footer_menu2">
+            <img src="image/facebook (1).svg" alt="Logo_facebook">
+            <p><a href="https://www.facebook.com/pages/Observatoire%20De%20Rouen/425402227624711/" target="_blank">Facebook</a></p>
+        </div>
+    </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+    <html   lang="fr">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Observatoire astronomique de Rouen</title>
+        <link rel="icon" type="image/png" href="Logo.png" />
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.5.1.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+        
+    </head>
+    <body>
+      
+    <div class="smooth">
+      <div class="header">
+        <div class="Logo" ><img src="image/Logo.png" width="45" alt=""></div>
+        <nav class="nav">
+          <a href="#Accueil" class="nav-item  is-active" active-color=#134074>Accueil</a>
+          <a href="#Article" class="nav-item" active-color=#134074 >Article</a>
+          <a href="#Evenement" class="nav-item" active-color=#134074 >Évènement</a>
+          <a href="#Galerie" class="nav-item" active-color=#134074>Galerie</a>
+          <a href="#Contact" class="nav-item" active-color=#134074>Contact</a>
+          <span class="nav-indicator"></span>
+        </nav>
+      </div>
+      
+                <section id="Accueil">
+                  <div class="h3T">
+                  <p>Observatoire astronomique de Rouen</p>
+                </div>
+                </section>
+
+                <section id="Article">
+                  <div class="blogs owl-carousel">
+                    <div class="blog">
+                      <img src="image/article1.jpg" alt="">
+                      <div class="blog-description">
+                        <div class="categorie">Article 1</div>
+                        <h3 class="titleB">Lorem ipsum dolor sit amet</h3>
+                        <div class="date">Mer 25 Nov 2020</div>
+                        <a href="article.html" class="btn">Voir plus</a>
+                      </div>
+                    </div>
+              
+                    <div class="blog">
+                      <img src="image/article2.jpg" alt="">
+                      <div class="blog-description">
+                        <div class="categorie">Article 2</div>
+                        <h3 class="titleB">Lorem ipsum dolor sit amet</h3>
+                        <div class="date">Mer 25 Nov 2020</div>
+                        <a href="article.html" class="btn">Voir plus</a>
+                      </div>
+                    </div>
+              
+                    <div class="blog">
+                      <img src="image/article3.jpg" alt="">
+                      <div class="blog-description">
+                        <div class="categorie">Article 3</div>
+                        <h3 class="titleB">Lorem ipsum dolor sit amet</h3>
+                        <div class="date">Mer 25 Nov 2020</div>
+                        <a href="article.html" class="btn">Voir plus</a>
+                      </div>
+                    </div>
+              
+                    <div class="blog">
+                      <img src="image/article4.jpg" alt="">
+                      <div class="blog-description">
+                        <div class="categorie">Article 4</div>
+                        <h3 class="titleB">Lorem ipsum dolor sit amet</h3>
+                        <div class="date">Mer 25 2020</div>
+                        <a href="article.html" class="btn">Voir plus</a>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <script type="text/javascript">
+                    $(".owl-carousel").owlCarousel({
+                      items: 2,
+                      margin: 20,
+                      loop: true,
+                      center: true,
+                      dots: false
+                    });
+                  </script>
+                </section>
+
+                <section id="Evenement">
+                  <h1>Évènement à venir</h1>
+                 <div class="CAR">
+                  <div class="Soon1">
+                    <h2 class="event1">14 / 12 / 2020</h2>
+                    <h1>Eclipse solaire</h1>
+                    <hr>
+                    <p id="launch1"></p>
+                    </div>
+
+                      <script>
+      
+                        var countDownDate1 = new Date ("december 14, 2020 14:33:00").getTime();
+                
+                        var x = setInterval(function() {
+                
+                        var now = new Date ().getTime();
+                
+                        var distance = countDownDate1 - now;
+                
+                        var days = Math.floor (distance /(1000*60*60*24));
+                        var hours = Math.floor ((distance % (1000*60*60*24)) / (1000*60*60));
+                          var minutes = Math.floor ((distance % (1000*60*60)) / (1000*60));
+                          var seconds = Math.floor ((distance % (1000*60)) / 1000);
+                
+                document.getElementById("launch1").innerHTML=days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+                    
+                    if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById('launch1').innerHTML="Evenement passé";
+                    }
+                            
+                }, 1000);
+                    
+                    </script>
+
+                <div class="Soon2">
+                  <h2 class="event2">14 / 12 / 2020</h2>
+                  <h1>Lorem ipsum</h1>
+                  <hr>
+                  <p id="launch2"></p>
+                  
+                </div>
+
+                    <script>
+
+                      var countDownDate2 = new Date ("March 1, 2021 00:00:00").getTime();
+
+                      var x = setInterval(function() {
+
+                      var now = new Date ().getTime();
+
+                      var distance = countDownDate2 - now;
+
+                      var days = Math.floor (distance /(1000*60*60*24));
+                      var hours = Math.floor ((distance % (1000*60*60*24)) / (1000*60*60));
+                        var minutes = Math.floor ((distance % (1000*60*60)) / (1000*60));
+                        var seconds = Math.floor ((distance % (1000*60)) / 1000);
+
+                document.getElementById("launch2").innerHTML=days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+                  
+                  if (distance < 0) {
+                  clearInterval(x);
+                  document.getElementById('launch2').innerHTML="Evenement passé";
+                  }
+                          
+                }, 1000);
+                  
+                  </script>
+
+                <div class="Soon3">
+                  <h2 class="event3">14 / 12 / 2020</h2>
+                  <h1>Lorem ipsum</h1>
+                  <hr>
+                  <p id="launch3"></p>
+                  </div>
+
+                    <script>
+
+                      var countDownDate3 = new Date ("March 1, 2020 00:00:00").getTime();
+
+                      var x = setInterval(function() {
+
+                      var now = new Date ().getTime();
+
+                      var distance = countDownDate3 - now;
+
+                      var days = Math.floor (distance /(1000*60*60*24));
+                      var hours = Math.floor ((distance % (1000*60*60*24)) / (1000*60*60));
+                        var minutes = Math.floor ((distance % (1000*60*60)) / (1000*60));
+                        var seconds = Math.floor ((distance % (1000*60)) / 1000);
+
+                document.getElementById("launch3").innerHTML=days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+                  
+                  if (distance < 0) {
+                  clearInterval(x);
+                  document.getElementById('launch3').innerHTML="Evenement passé";
+                  }
+                          
+                }, 1000);
+                  
+                  </script>
+                </div>
+                <div>
+                  <a href="event.html" class="btnEVENT">Voir plus</a>
+                </div>
+                </section>
+
+                <section id="Galerie">
+                  <div class="photo">
+                  <div class="nb">
+                    <h3>47</h3>
+                    <h3>Photographie</h3>
+                  </div>
+                  <div class="nbP">
+                    <h3>11</h3>
+                    <h3>Planètes</h3>
+                  </div>
+                  <div class="nbE">
+                    <h3>16</h3>
+                    <h3>Étoiles</h3>
+                  </div>
+                </div>
+                <a href="galerie.html" class="btnGAL">Voir plus</a>
+                </section>
+
+                <section id="Contact">
+                  <div class="part">
+                    <div class="part1">
+                      <div class="havre">
+                      <img url="image/logo_havre">
+                    </div>
+                      <h3>Société Astronomique du Havre</h3>
+                      <a href="http://www.astrosurf.com/sahavre" class="link" target="_blank">http://www.astrosurf.com/sahavre</a>
+                    </div>
+                    <div class="part2">
+                      <div class="preaux">
+                      <img url="image/preaux">
+                    </div>
+                      <h3>Astro-Club Saturne de Préaux</h3>
+                      <a href="http://www.astrosurf.com/astropreaux"class="link" target="_blank">http://www.astrosurf.com/astropreaux</a>
+                    </div>
+                    <div class="part3">
+                      <div class="groupe4">
+                      <img url="image/Groupe_4">
+                    </div>
+                      <h3>Astro-Club de Toussaint</h3>
+                      <a href="http://www.astrosurf.com/toussaint"class="link" target="_blank">http://www.astrosurf.com/toussaint</a>
+                    </div>
+                  </div>
+                  <a href="contact.html" class="btnGAL">Nous contacter</a>
+                  </section>
+    </div>
+    
+    
+    <script type="text/javascript" src="script.js"></script>
+
+  </body>
+</html>
